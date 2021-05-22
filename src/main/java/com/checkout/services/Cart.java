@@ -12,20 +12,20 @@ import java.util.UUID;
 public class Cart {
 
     private final Map<Product, Integer> items = new HashMap<>();
-    private final String cardId;
+    private final String id;
     private double totalPrice = 0.0;
     private double totalDiscount = 0.0;
 
     public Cart() {
-        this.cardId = UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString();
     }
 
     public Map<Product, Integer> getItems() {
         return new HashMap<>(items);
     }
 
-    public String getCardId() {
-        return cardId;
+    public String getId() {
+        return id;
     }
 
     public double getTotalPrice() {

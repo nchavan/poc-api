@@ -23,7 +23,7 @@ public class Checkout {
             logger.error("{} invalid product with null value, please scan valid product", serviceName);
             throw new InvalidInput("Invalid product with null value entered, please enter a valid product");
         }
-        logger.info("{} cart id {}, scan product {}", serviceName, cart.getCardId(), product.getCode());
+        logger.info("{} cart id {}, scan product {}", serviceName, cart.getId(), product.getCode());
         cart.addProduct(product);
     }
 
@@ -40,7 +40,7 @@ public class Checkout {
                     .forEach(cart::applyDiscount);
         }
 
-        logger.info("{} cart id {}, total price is {}", serviceName, cart.getCardId(), cart.getTotalPrice());
+        logger.info("{} cart id {}, total price is {}", serviceName, cart.getId(), cart.getTotalPrice());
 
         return cart.getTotalPriceInCurrency();
     }

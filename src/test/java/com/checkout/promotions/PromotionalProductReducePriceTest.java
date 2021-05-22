@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BuyTwoPromotionalProductReducePriceTest {
+class PromotionalProductReducePriceTest {
 
     @DisplayName("Add promotional discount to Cart and return discounted value")
     @Test
@@ -20,7 +20,7 @@ class BuyTwoPromotionalProductReducePriceTest {
         cart.addProduct(item2);
         cart.addProduct(item1);
 
-        BuyTwoPromotionalProductReducePrice promotions = new BuyTwoPromotionalProductReducePrice(item1, 2, 8.00);
+        PromotionalProductReducePrice promotions = new PromotionalProductReducePrice(item1, 2, 8.00);
 
         double output = promotions.calculateDiscount(cart.getItems());
         assertEquals(expectedDiscountValue, output);
@@ -38,7 +38,7 @@ class BuyTwoPromotionalProductReducePriceTest {
         cart.addProduct(item2);
         cart.addProduct(item3);
 
-        BuyTwoPromotionalProductReducePrice promotions = new BuyTwoPromotionalProductReducePrice(item1, 2, 8.00);
+        PromotionalProductReducePrice promotions = new PromotionalProductReducePrice(item1, 2, 8.00);
 
         double output = promotions.calculateDiscount(cart.getItems());
         assertEquals(expectedDiscountValue, output);

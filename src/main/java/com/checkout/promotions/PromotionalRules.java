@@ -12,7 +12,7 @@ public class PromotionalRules {
     private final Set<CartDiscount> cartDiscounts = new HashSet<>();
 
     public void buyMultipleSameProductsAndReduceProductPrice(final Product product, final Integer itemsCount, double newPrice) {
-        ProductDiscount productDiscount = new BuyTwoPromotionalProductReducePrice(product, itemsCount, newPrice);
+        ProductDiscount productDiscount = new PromotionalProductReducePrice(product, itemsCount, newPrice);
         this.productDiscounts.add(productDiscount);
     }
 

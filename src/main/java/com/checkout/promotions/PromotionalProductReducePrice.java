@@ -5,12 +5,12 @@ import com.checkout.promotions.interfaces.ProductDiscount;
 
 import java.util.Map;
 
-public class BuyTwoPromotionalProductReducePrice implements ProductDiscount {
+public class PromotionalProductReducePrice implements ProductDiscount {
     private final Product product;
     private final int itemsCount;
     private final double newPrice;
 
-    public BuyTwoPromotionalProductReducePrice(final Product product, final int itemsCount, final double newPrice) {
+    public PromotionalProductReducePrice(final Product product, final int itemsCount, final double newPrice) {
         this.product = product;
         this.itemsCount = itemsCount;
         this.newPrice = newPrice;

@@ -32,7 +32,9 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    getMainClass().set('com.checkout.App')
+    //getMainClass().set('com.checkout.App')
+
+    mainClass = 'com.checkout.App'
 }
 
 tasks.named('test') {

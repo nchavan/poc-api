@@ -27,8 +27,7 @@ public class App {
         co.scan(personalisedCufflinks);
         co.scan(travelCardHolder);
         co.scan(kidsTShirt);
-        String price = co.total();
-        logger.info("{} total price {} paid successfully", serviceName, price);
+        co.total();
         logger.info("{} stopping", serviceName);
     }
 

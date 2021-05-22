@@ -39,9 +39,7 @@ public class Checkout {
                     .mapToDouble(cartDiscount -> cartDiscount.calculateDiscount(cart.getTotalPrice()))
                     .forEach(cart::applyDiscount);
         }
-
-        logger.info("{} cart id {}, total price is {}", serviceName, cart.getId(), cart.getTotalPrice());
-
+        logger.info("{} cart id {}, total price is {}", serviceName, cart.getId(), cart.getTotalPriceInCurrency());
         return cart.getTotalPriceInCurrency();
     }
 }

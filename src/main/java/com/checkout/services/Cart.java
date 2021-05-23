@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
@@ -33,13 +34,8 @@ public class Cart {
     }
 
     public String getTotalPriceInCurrency() {
-        NumberFormat formatter = NumberFormat.getCurrencyInstance();
         double total = doublePrecision(totalPrice - totalDiscount);
-        return formatter.format(total);
-    }
-
-    private double doublePrecision(final double discount) {
-        return BigDecimal.valueOf(discount).setScale(2, RoundingMode.HALF_EVEN).doubleValue();
+        return priceCurrency(total, Locale.UK);
     }
 
     public void applyDiscount(final double discount) {
@@ -56,5 +52,14 @@ public class Cart {
             }
             totalPrice = totalPrice + product.getPrice();
         }
+    }
+
+    private double doublePrecision(final double discount) {
+        return BigDecimal.valueOf(discount).setScale(2, RoundingMode.HALF_EVEN).doubleValue();
+    }
+
+    private String priceCurrency(final double total, Locale locale) {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
+        return formatter.format(total);
     }
 }
